@@ -1,0 +1,102 @@
+<div class="card-wrapper">
+  <div class="card-image">
+    <img src="../../assets//visa-card.png" />
+  </div>
+
+  <div class="card-form">
+    <form [formGroup]="cardForm" (ngSubmit)="pay()">
+      <div class="amount">
+        <mat-form-field appearance="legacy">
+          <mat-label>Amount</mat-label>
+          <input
+            type="number"
+            matInput
+            placeholder="amount(in Rs)"
+            formControlName="amount"
+          />
+          <mat-error
+            *ngIf="
+              !cardForm.controls['amount'].valid &&
+              cardForm.controls['amount'].touched
+            "
+          >
+            {{ getAmountError() }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="name">
+        <mat-form-field appearance="legacy">
+          <mat-label>Name on Card</mat-label>
+          <input
+            matInput
+            placeholder="card holder name"
+            formControlName="name"
+          />
+          <mat-error
+            *ngIf="
+              !cardForm.controls['name'].valid &&
+              cardForm.controls['name'].touched
+            "
+          >
+            {{ getCardNameError() }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="number">
+        <mat-form-field appearance="legacy">
+          <mat-label>Card Number</mat-label>
+          <input matInput placeholder="card number" formControlName="number" />
+          <mat-error
+            *ngIf="
+              !cardForm.controls['number'].valid &&
+              cardForm.controls['number'].touched
+            "
+          >
+            {{ getCardNumberError() }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="date">
+        <div class="expiry">
+          <mat-form-field appearance="legacy">
+            <mat-label>Valid Through</mat-label>
+            <input matInput placeholder="expiry date" formControlName="valid" />
+            <mat-error
+              *ngIf="
+                !cardForm.controls['valid'].valid &&
+                cardForm.controls['valid'].touched
+              "
+            >
+              {{ getValidityError() }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="cvv">
+          <mat-form-field appearance="legacy">
+            <mat-label>CVV</mat-label>
+            <input
+              matInput
+              placeholder="CVV"
+              type="numeric"
+              formControlName="cvv"
+            />
+            <mat-error
+              *ngIf="
+                !cardForm.controls['cvv'].valid &&
+                cardForm.controls['cvv'].touched
+              "
+            >
+              {{ getCvvError() }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="pay-button">
+        <button mat-stroked-button color="primary">Pay</button>
+      </div>
+    </form>
+  </div>
+</div>

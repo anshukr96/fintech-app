@@ -1,0 +1,41 @@
+@import "src/styles/_color";
+@import "src/styles/_fonts";
+
+.card-details-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .go-btn {
+    button {
+      background: $primary-blue;
+      padding: 10px;
+      border-radius: 8px;
+      color: $primary-white;
+      border: transparent;
+      cursor: pointer;
+    }
+  }
+  .detail {
+    background: cornflowerblue;
+    padding: 4em;
+    color: $primary-white;
+    border-radius: 2em;
+    margin-top: 12px;
+    h1 {
+      font-weight: 900;
+      color: $primary-yellow;
+    }
+    .card-info {
+      margin-top: 12px;
+      display: flex;
+      font-size: $font-md;
+      font-weight: $font-wt-bold;
+      align-items: baseline;
+      .value {
+        margin-left: 8px;
+        font-size: $font-sm;
+        font-weight: $font-wt-300;
+      }
+    }
+  }
+}

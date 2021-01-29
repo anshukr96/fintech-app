@@ -1,0 +1,34 @@
+<div class="card-details-wrapper">
+  <div class="go-btn">
+    <button mat-stroked-button color="primary" (click)="onPayment()">
+      Go to Payment
+    </button>
+  </div>
+  <ng-container *ngIf="card$$ | async; let card">
+    <div class="detail">
+      <h1>Card Details:</h1>
+      <div>
+        <div class="card-info">
+          <div>Card Number:</div>
+          <div class="value">{{ card.number }}</div>
+        </div>
+        <div class="card-info">
+          <div>Card Holder Name:</div>
+          <div class="value">{{ card.name }}</div>
+        </div>
+        <div class="card-info">
+          <div>Security Code:</div>
+          <div class="value">{{ card.cvv }}</div>
+        </div>
+        <div class="card-info">
+          <div>Expiry Date:</div>
+          <div class="value">{{ card.expiry }}</div>
+        </div>
+        <div class="card-info">
+          <div>Amount (in Rs):</div>
+          <div class="value">{{ card.amount }}</div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

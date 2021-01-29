@@ -1,0 +1,31 @@
+@import "src/styles/_color";
+
+.card-wrapper {
+  display: flex;
+  .card-image {
+    flex: 3;
+  }
+  .card-form {
+    flex: 2;
+    margin-right: 2em;
+    padding: 1em;
+    background: $primary-white;
+    .date {
+      display: flex;
+      .cvv {
+        margin-left: 20px;
+      }
+    }
+    .pay-button {
+      margin-top: 20px;
+      button {
+        width: 100%;
+        background-color: $primary-blue;
+        padding: 10px;
+        border-radius: 50px;
+        color: $primary-white;
+        cursor: pointer;
+      }
+    }
+  }
+}
